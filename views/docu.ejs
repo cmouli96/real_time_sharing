@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital@1&family=Averia+Libre:ital,wght@1,700&display=swap" rel="stylesheet"> 
+
+
+        <style>
+            .parallax-container {
+                 height: 400px;
+                 
+            }
+            #table1
+            {
+                font-family: 'Amaranth', sans-serif;
+                font-size: 30px;
+            }
+            #user
+            {
+                font-family: 'Amaranth', sans-serif;
+                font-size: 40px;
+                text-align: center;
+            }
+
+        </style>
+            
+    </head>
+    <body>
+
+        <nav>
+            <div class="nav-wrapper teal darken-4" style = "color : #04201b; ">
+              <a href="#" class="brand-logo"><img src="images/logo1.png" width="65" height="65"/></a>
+              <ul id="nav-mobile" class="right teal darken-4 hide-on-med-and-down">
+                <li><a href="something.html">Profile</a></li>
+                <li><a href="About.html">About</a></li>
+              </ul>
+            </div>
+          </nav>
+
+
+         <nav>
+              <div class="nav-wrapper teal darken-3">
+              <form onsubmit="display1()">
+                <div class="input-field">
+                 <input id="search" type="search" required>
+                 <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                 <i class="material-icons">close</i>
+                </div>
+             </form>
+            </div>
+        </nav>
+
+        <div class="parallax-container">
+            <div class="parallax"><img src="images/c5.jpg"></div>
+        </div>
+
+                <div class="section black">
+
+                    <div class="row container black">
+                       <div class="green-text text-accent-4" id="user"> <a class="btn-floating btn-large waves-effect waves-light green accent-4"><i class="material-icons">account_circle</i></a>USER </div>
+                    </div>
+                    <div class="row container ">
+                        <table class="black centered striped" id = "table1">
+                    
+                            <tbody>
+                              <tr>
+                                <td><span class="light-green-text text-accent-3">top.txt</span></td>
+                                <td> <a class="btn-floating btn-large waves-effect waves-light green accent-4"><i class="material-icons">file_download</i></a></td>
+                              </tr>
+                              <tr>
+                                <td><span class="light-green-text text-accent-3">ls.txt</span></td>
+                                <td> <a class="btn-floating btn-large waves-effect waves-light green accent-4"><i class="material-icons">file_download</i></a></td>
+                              </tr>
+                              <tr>
+                                <td><span class="light-green-text text-accent-3">file1.txt</span></td>
+                                <td> <a class="btn-floating btn-large waves-effect waves-light green accent-4"><i class="material-icons">file_download</i></a></td>
+                              </tr>
+                              <tr>
+                                <td><span class="light-green-text text-accent-3">file2.txt</span></td>
+                                <td> <a class="btn-floating btn-large waves-effect waves-light green accent-4"><i class="material-icons">file_download</i></a></td>
+                              </tr>
+                              <tr>
+                                <td><span class="light-green-text text-accent-3">file3.txt</span></td>
+                                <td> <a class="btn-floating btn-large waves-effect waves-light green accent-4"><i class="material-icons">file_download</i></a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                 </div>
+                </div>
+
+        <div class="parallax-container">
+            <div class="parallax"><img src="images/c3.jpg"></div>
+        </div>
+         
+          
+    <script type="text/javascript" >
+       
+       document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems);
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tap-target');
+    var instances = M.TapTarget.init(elems);
+  });
+             
+    </script>
+ </body>
+   
+  
+
+</html>

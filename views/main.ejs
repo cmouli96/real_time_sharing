@@ -1,0 +1,223 @@
+<html>
+    <head>
+          <!-- Compiled and minified CSS -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+          <!-- Compiled and minified JavaScript -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+         <style>
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	background-color: #FFF;
+}
+
+.text-box1 {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+h1 {
+	font-size: 3vw;
+	font-weight: 800;
+	background-color : rgb(9, 53, 53);
+	color: #fff;
+	display: block;
+	padding: .5em;
+}
+
+h1:nth-child(2) {
+	position: absolute;
+	background-color: #fff;
+	color: rgb(9, 53, 53);
+	clip-path: inset(-1% -1% 50% -1%); 
+}
+
+p {
+	font-size: 1vw;
+	font-weight: 900;
+	margin-top: 1em;
+	text-align: left;
+}
+p span {
+		display: block;
+		transform: rotate(90deg);
+		margin-top: .25em;
+	}
+
+
+.container1 {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+#file
+{
+	border : 1px solid teal;
+	border-radius: 10px;
+}
+#upload
+{
+	font-size: large;
+	border-radius: 6px;
+	padding-bottom: 55px;
+	text-shadow: 2px 2px #000;
+}
+#submit
+{
+	border-radius: 8px;
+	padding-left: 30px;
+	padding-top: 8	px ;
+	padding-bottom: 50px;
+	padding-right: 30px;
+	font-size: large;
+	text-shadow: 3px 3px 2px #000;
+}
+
+.card
+{
+	background-color: rgb(209, 224, 228);
+	border-radius: 10px;
+	box-shadow: #000;
+}
+.alink
+{
+	float: right;
+	padding-bottom: 50px;
+}
+.file_name
+{
+	font-size: 23px;
+	color : #000;
+	width : 50px;
+	text-shadow: 1px 1px 1px #000;
+}
+
+         </style>
+         
+    </head>
+
+    <body>
+
+        <nav>
+            <div class="nav-wrapper teal darken-4" style = "color : #04201b; ">
+              <a href="#" class="brand-logo"><img src="images/logo1.png" width="65" height="65"/></a>
+              <ul id="nav-mobile" class="right teal darken-4 hide-on-med-and-down">
+                <li><a href="something.html">Profile</a></li>
+                <li><a href="About.html">About</a></li>
+              </ul>
+            </div>
+        </nav>
+
+        <div class="container1">
+            <!-- code here -->
+            <div class="text-box1">
+                <h1>REAL TIME TERMINAL OUTPUT SHARING</h1>
+                <h1>REAL TIME TERMINAL OUTPUT SHARING</h1>
+            </div>
+                <p>USER_NAME<span>:)</span></p>
+        </div>
+
+		
+        <form action="/upload" method="post" enctype="multipart/form-data">
+		<div class="row">
+		<div class="col l6 m12 s12 offset-l3">
+			<div class="file-field input-field">
+			  <div class="btn" id="upload">
+				<span> choose file</span>
+				<input type="file" class="custom-file-input" name="file" id="file1" onchange="readSingleFile(this.files)">
+			  </div>
+			  <div class="file-path-wrapper" id="file">
+				<input class="file-path validate" type="text">
+			  </div>
+			</div>
+		</div>
+		</div>
+		<div class="row">
+		<div class="col offset-l3">
+			<button class="btn" id = "submit" type="submit">Upload<i class="material-icons">file_upload</i></button>
+		</div>
+		</div>
+          <!-- </form>
+          <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input" name="file" id="file1" onchange="readSingleFile(this.files)">
+                <label class="custom-file-label" for="file1" id="file-label">Choose file</label>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary btn-block">
+        </form> -->
+		
+		<!--these are the files dispalyed -->
+
+		  <div class="row">
+			<div class="col l6 s12 m6 offset-l3">
+			  <div class="card">
+				<div class="card-content">
+                    <% if(files) { %>
+                        <% files.forEach(function(file) {%>
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <div class="card-title">
+                                        <%= file.filename %>
+                                </div>
+                            </div>
+                            <!-- <div class="card-footer">
+                                <form action="/files/del/<%= file._id %>" method="post">
+                                    <button type="submit" class="btn btn-danger">Remove</button>
+                                </form>
+                            </div> -->
+                            <div class = "alink">
+                                <!--download icon-->
+                                <a class="btn-floating btn-small waves-effect waves-light teal darken-4" href="image/<%= file.filename %>" download><i class="material-icons">file_download</i></a>
+                                <!--delete icon-->
+                                <a class="btn-floating btn-small waves-effect waves-light teal darken-4"  >
+                                    <form action="/files/del/<%= file._id %>" method="post">
+                                        <!-- <i type="submit" class="material-icons">delete</i> -->
+                                        <i class="material-icons"><button type="submit"></button></i>
+                                    </form>
+                                    </a>
+                            </div>
+                        </div>
+                        <%}) %>
+                        <% } else { %>
+                        <p>No files to show</p>
+                        <% } %>
+			     <span class="file_name"></span>
+
+				 
+				</div>
+				
+			  </div>
+			</div>
+		  </div>
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+            <script>
+                function readSingleFile(e) {
+                    const name = e[0].name;
+                    document.getElementById("file-label").textContent = name;
+                }
+            </script>
+
+				
+		
+    </body>
+</html>

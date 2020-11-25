@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='css/style.css' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">    
+    <title>Account</title>        
+    <style>
+        .tabs .indicator{
+            background-color: teal;
+        }
+        body{
+            align-items: center;
+            
+        }
+        #main_part
+        {
+            margin-top : 100px;
+        }
+        #test1_in
+        {
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+        #test2_in
+        {
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+      </style>
+  </head>    
+<body>      
+        
+    <nav>
+        <div class="nav-wrapper teal darken-4" style = "color : #04201b; ">
+          <a href="#" class="brand-logo"><img src="logo1.png" width="65" height="65"/></a>
+          <ul id="nav-mobile" class="right teal darken-4 hide-on-med-and-down">
+            <li><a href="something.html">Profile</a></li>
+            <li><a href="About.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+
+     
+        
+    <div class="row container padtop80" id="main_part" style="min-height:100vh">
+        <div class="col m6 offset-m3 s12">
+        <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3"><a href="#test1" class="active teal-text text-darken-4">Login</a></li>
+                <li class="tab col s3"><a href="#test2" class="teal-text text-darken-4">Register</a></li>        
+            </ul>
+        </div>
+        </div>
+        </div>
+
+   
+        <div id="test1" class="col s12 padtop40">                    
+        <div class="col m6 offset-m3 s12 z-depth-1 padtop10 " >
+
+
+            <div class="lid" id="test1_in">
+                
+            <form action="login"   method="POST">
+                <div class="input-field col s12 remx">
+                        <input  id="name" name = "email" type="text" class="validate" required>
+                        <label for="first_name"> Email</label>
+                </div>
+
+                <div class="input-field col s12 remx">
+                        <input  id="password" name="pwd" type="password" class="validate" required>
+                        <label for="password1">Password</label>
+                </div>
+
+                <p class="padleft10 remx">
+                        <input type="checkbox" id="test5" />
+                        <label for="test5">Remember Me</label>
+                </p>
+
+                <p class="padleft10 remx" >
+                        <button type = "submit" class="teal darken-4 btn">Login</button>
+                        <a href="#" class="teal-text text-darken-4" id="hider">Forgot my password?</a>
+                </p>
+            </form>
+            </div>
+
+
+            
+                       
+              
+        </div>
+                    
+                </div>
+    <div id="test2" class="col s12 padtop40" >
+        <form action="register" method="POST">
+                <div class="col m6 offset-m3 s12 z-depth-1 padtop10"  id="test2_in">
+                <div class="input-field col s12 ">
+                  <input  id="email" type="email" name="email" class="validate" required>
+                  <label for="first_name">Email ID* </label>
+                </div>
+                <div class="input-field col s12 ">
+                  <input  id="name1" type="text" name = "name" class="validate" required>
+                  <label for="first_name"> Name* </label>
+                </div>          
+                <div class="input-field col s12 ">
+                  <input id="mobile" type="tel" name="mobile" class="validate" pattern="[0-9]{10}" required>
+                  <label for="first_name">Mobile Number* </label>
+                </div>      
+                <div class="input-field col s12 ">
+                  <input  id="password1" type="password" name="pwd" class="validate" required>
+                  <label for="password1">New Password*</label>
+                </div>
+                
+                
+                <p class="padleft10">
+                    <button type="submit" class="teal darken-4 btn">Register</button>                    
+                </p>
+                
+            </div>
+        </form>    
+        
+    </div>    
+    <div class = "col l8 m6 s12 offset-l4">
+      <span><%= infy %></span>
+    </div>
+</div>      
+   
+        
+
+      
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js">
+        </script>
+        <script>
+    	   $( document ).ready(function(){
+    	       $(".button-collapse").sideNav();
+               $(".dropdown-button").dropdown();
+    	       $('select').material_select(); 
+               $('.slider').slider({full_width: true});
+                   $(".button-collapse").sideNav();
+           })
+        </script>
+        
+    </body>
+    
+
+</html>
